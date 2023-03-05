@@ -1,3 +1,8 @@
+body {
+    font-family: Palatino, palatino linotype, palatino lt std, "思源宋体 CN",
+      sans-serif;
+    text-align: justify;
+  }
 /* chrome, edge */
 *::-webkit-scrollbar-thumb {
     background-color: #bfbfbf;
@@ -14,3 +19,71 @@
 * {
     scrollbar-width: thin;
 }
+
+
+.root-wrapper {
+    background: #f8f9fa;
+    padding: 0px 0;
+    border-radius: 10px;
+}
+.chat-wrapper {
+    background: white;
+    width: 900px;
+    border-radius: 12px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100vh;
+}
+/* 移动端宽度为整个屏幕 */
+@media (max-width: 900px) {
+    .chat-wrapper {
+        width: 100vw;
+    }
+}
+#chat-records {
+    /* height: 600px; */
+    height: 65vh;
+    overflow-y: auto;
+    box-shadow: inset 0px 0px 5px 1px #dee2e6;
+    margin-bottom: 5px;
+    background: #f8f9fa;
+    outline: 1px solid #f1f3f5;
+    border-radius: 10px;
+}
+
+/* 聊天显示的文字框 */
+.chat-record-container {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+}
+/* 移动端宽度为整个屏幕 */
+@media (max-width: 900px) {
+    .chat-record-container {
+        width: 60vw;
+    }
+}
+
+
+.ant-message-custom-content {
+    max-width: 700px;
+}
+/* 初次加载时的动画 */
+._dash-loading {
+    color: transparent;
+    position: fixed;
+    width: calc(8 * 40px);
+    height: calc(6 * 40px);
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    background-image: url("/assets/loading.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+._dash-loading::after {
+    content: '';
+}
+
