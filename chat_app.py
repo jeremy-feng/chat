@@ -54,11 +54,6 @@ app.layout = fac.AntdWatermark(
                                             # italic=True,
                                             style={"fontSize": 22},
                                         ),
-                                        fac.AntdText(
-                                            "（基于 OpenAI ChatGPT 接口+feffery components）",
-                                            type="secondary",
-                                            style={"fontSize": 10},
-                                        ),
                                     ]
                                 )
                             ),
@@ -112,7 +107,7 @@ app.layout = fac.AntdWatermark(
                                     ),
                                     fuc.FefferyDiv(
                                         fac.AntdText(
-                                            "你好，欢迎使用基于 ChatGPT 服务的在线聊天机器人。",
+                                            "你好，欢迎使用基于 ChatGPT 服务的在线问答机器人。",
                                             style={"fontSize": 16},
                                         ),
                                         className="chat-record-container",
@@ -151,7 +146,7 @@ app.layout = fac.AntdWatermark(
                                     ),
                                     fuc.FefferyDiv(
                                         fmc.FefferyMarkdown(
-                                            markdownStr="请向我提问！我会在准备好答案后一次性回复你，请耐心等待😄",
+                                            markdownStr="请向我提问！我会在准备好回答后一次性回复你，请耐心等待😄",
                                             style={
                                                 "fontSize": 16,
                                                 "fontFamily": 'Palatino, palatino linotype, palatino lt std, "思源宋体 CN", sans-serif',
