@@ -3,3 +3,4 @@ feffery_antd_components==0.2.0rc30
 feffery_markdown_components==0.2.9
 feffery_utils_components==0.1.19
 openai==0.27.0
+gunicorn
