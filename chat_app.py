@@ -23,7 +23,7 @@ if sys.argv[1] == "local":
 # 载入 openai api key
 openai.api_key = Config.openai_api_key
 feature = """
-在右上角，你可以：
+在上方，你可以：
 
 1. 开启多轮对话模式，我将记住你之前的问题。
 
