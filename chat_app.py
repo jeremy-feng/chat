@@ -14,7 +14,7 @@ import os
 # 本地运行需要开启代理
 import sys
 
-if sys.argv[1] == "local":
+if len(sys.argv) > 1 and sys.argv[1] == "local":
     import os
 
     os.environ["HTTP_PROXY"] = "http://127.0.0.1:10809"
@@ -268,6 +268,13 @@ def send_new_question(
                 dash.no_update,
             ]
 
+        # 将上一次历史问答记录中 id 为 latest-response-begin 的元素过滤掉
+        origin_children = [
+            child
+            for child in origin_children
+            if child["props"].get("id") != "latest-response-begin"
+        ]
+
         # 更新各输出目标属性
         return [
             [
@@ -293,6 +300,8 @@ def send_new_question(
                         "flexDirection": "row-reverse",
                     },
                 ),
+                # 在当前问题回复之前注入辅助滚动动作的目标点
+                html.Div(id="latest-response-begin"),
                 # 渲染当前问题的回复
                 fac.AntdSpace(
                     [
@@ -322,7 +331,16 @@ def send_new_question(
             ],
             None,
             False,
-            fac.AntdMessage(content="回复生成成功", type="success"),
+            [
+                fac.AntdMessage(content="回复生成成功", type="success"),
+                # 新的滚动动作
+                fuc.FefferyScroll(
+                    scrollTargetId="latest-response-begin",
+                    scrollMode="target",
+                    executeScroll=True,
+                    containerId="chat-records",
+                ),
+            ],
             # 根据是否处于多轮对话模式选择返回的状态存储数据
             {
                 "status": "开启" if enable_multi_round else "关闭",
