@@ -57,7 +57,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "local":
 
 在本地构建时，用`python app.py local`即可。
 
-如果你只在本地运行，也可以不用加入命令行参数，也就是把 `#!py if sys.argv[1] == "local":` 删去，默认使用 PROXY。
+如果你只在本地运行，也可以不用加入命令行参数，也就是把 `#!py if len(sys.argv) > 1 and sys.argv[1] == "local":` 删去，默认使用 PROXY。
 
 我这里加入了命令行参数，是因为我最终需要部署到 render 上，render 是不用开启 PROXY 就能使用 OpenAI 的。
 
