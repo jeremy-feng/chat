@@ -8,7 +8,7 @@
 2. 导出当前对话记录为 Markdown 文件，你可以将其保存到本地。
 3. 一键清空当前对话记录。
 
-[使用它！](https://chat.fengchao.pro/){ .md-button }
+[使用它！](https://chat.fengchao.pro/)
 
 ## ChatGPT 接口和 Dash 应用介绍
 
