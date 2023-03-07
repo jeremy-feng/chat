@@ -57,13 +57,11 @@ if sys.argv[1] == "local":
 
 在本地构建时，用`python app.py local`即可。
 
-!!! info "若只在本地运行，可以默认使用 PROXY"
+如果你只在本地运行，也可以不用加入命令行参数，也就是把 `#!py if sys.argv[1] == "local":` 删去，默认使用 PROXY。
 
-	如果你只在本地运行，也可以不用加入命令行参数，也就是把 `#!py if sys.argv[1] == "local":` 删去，默认使用 PROXY。
-	
-	我这里加入了命令行参数，是因为我最终需要部署到 render 上，render 是不用开启 PROXY 就能使用 OpenAI 的。
-	
-	当我在本地运行时，就用命令行参数指定网络端口。而在 render 上持续部署时，默认是不会开启指定的网络端口的。
+我这里加入了命令行参数，是因为我最终需要部署到 render 上，render 是不用开启 PROXY 就能使用 OpenAI 的。
+
+当我在本地运行时，就用命令行参数指定网络端口。而在 render 上持续部署时，默认是不会开启指定的网络端口的。
 
 #### 将`openai_api_key`存放为环境变量
 
