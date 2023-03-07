@@ -48,7 +48,7 @@ OpenAI 在 3 月 2 日发布了 gpt-3.5-turbo，这是 GPT-3（Generative Pre-tr
 ```python
 import sys
 
-if sys.argv[1] == "local":
+if len(sys.argv) > 1 and sys.argv[1] == "local":
     import os
 
     os.environ["HTTP_PROXY"] = "http://127.0.0.1:10809"
